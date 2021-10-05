@@ -1,23 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-  $("button").click(function(){
-    $("p").hide("slow", function(){
-      alert("Berhasil Logout!");
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
   });
 });
 </script>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
 </head>
 <body>
 
-<button class="btn btn-danger">Logout</button>
+<p></p>  
+<input id="myInput" type="text" placeholder="Search..">
+<br><br>
 
-<p></p>
+<table>
+  <thead>
+  <tr>
+    <th>Nama Awal</th>
+    <th>Nama Akhir</th>
+    <th>Email</th>
+  </tr>
+  </thead>
+  <tbody id="myTable">
+  <tr>
+    <td>Moyes</td>
+    <td>Rafi</td>
+    <td>Rafi@email.com</td>
+  </tr>
+  <tr>
+    <td>Yusron</td>
+    <td>Rafi</td>
+    <td>Yusron@mail.com</td>
+  </tr>
+  <tr>
+    <td>Juven</td>
+    <td>Syndremo</td>
+    <td>Juven@greatstuff.com</td>
+  </tr>
 
+  </tbody>
+</table>
 </body>
 </html>
