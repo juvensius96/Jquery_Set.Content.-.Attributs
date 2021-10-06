@@ -4,64 +4,28 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myTable tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
+  $("#btn1").click(function(){
+    $("#test1").text("test1(text)");
+  });
+  $("#btn2").click(function(){
+    $("#test2").html("test2(html)");
+  });
+  $("#btn3").click(function(){
+    $("#test3").val("test3(value)");
   });
 });
 </script>
-<style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-</style>
 </head>
 <body>
 
-<p></p>  
-<input id="myInput" type="text" placeholder="Search..">
-<br><br>
+<p id="test1">Paragraf 1</p>
+<p id="test2">Paragraf 2<p>
 
-<table>
-  <thead>
-  <tr>
-    <th>Nama Awal</th>
-    <th>Nama Akhir</th>
-    <th>Email</th>
-  </tr>
-  </thead>
-  <tbody id="myTable">
-  <tr>
-    <td>Moyes</td>
-    <td>Rafi</td>
-    <td>Rafi@email.com</td>
-  </tr>
-  <tr>
-    <td>Yusron</td>
-    <td>Rafi</td>
-    <td>Yusron@mail.com</td>
-  </tr>
-  <tr>
-    <td>Juven</td>
-    <td>Syndremo</td>
-    <td>Juven@greatstuff.com</td>
-  </tr>
+<p>Masukan Text: <input type="text" id="test3" value="Mickey Mouse"></p>
 
-  </tbody>
-</table>
+<button id="btn1">Set Text</button>
+<button id="btn2">Set HTML</button>
+<button id="btn3">Set Nilai</button>
+
 </body>
 </html>
